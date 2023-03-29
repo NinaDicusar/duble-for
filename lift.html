@@ -1,0 +1,96 @@
+<style>
+    body{
+        background-color: #777;
+    }
+#building, #user{
+    border: 5px solid black;
+    width: 100px;
+    height: 900px;
+    float: left;
+    margin-top: 20px;
+}
+#user button{
+    width: 100px;
+    height: 100px;
+}
+#lift{
+    background-color: #333;
+    width: 100px;
+    height: 100px;
+    transition: 1s;
+}
+#btn-up{
+    width: 100px;
+     position: relative;
+    right: 105px;
+
+}
+#btn-down{
+    width: 100px;
+     position: relative;
+     right: 208px;
+   bottom: -928px;
+
+   
+
+}
+
+
+</style>
+
+
+<div id="building">
+    <div id="lift" style="transform: translateY(0px);">
+
+    </div> 
+
+</div>
+<button id="btn-up" onclick="up=8; moveUp()">▲</button>
+<div id="user">
+    <button onclick="floor=8; moveLift()">8</button>
+    <button onclick="floor=7; moveLift()">7</button>
+    <button onclick="floor=6; moveLift()">6</button>
+    <button onclick="floor=5; moveLift()">5</button>
+    <button onclick="floor=4; moveLift()">4</button>
+    <button onclick="floor=3; moveLift()">3</button>
+    <button onclick="floor=2; moveLift()">2</button>
+    <button onclick="floor=1; moveLift()">1</button>
+    <button onclick="floor=0; moveLift()">0</button>
+
+</div>
+<button  id="btn-down" onclick="down=0; moveDown()">▼</button>
+
+<script>
+    let floor = 0
+    let up = 8
+    let down = 0
+
+    function moveDown(){ 
+    let d = 800 - down * 100
+
+
+    lift.style =`transform: translateY(${d}px);`
+
+ }
+ moveDown()
+
+    function moveUp(){ 
+    let z = 800 - up * 100
+
+
+    lift.style =`transform: translateY(${z}px);`
+
+ }
+moveUp() 
+   
+   function moveLift(){ 
+    let y = 800 - floor * 100
+
+
+    lift.style =`transform: translateY(${y}px);`
+
+ }
+moveLift()
+
+
+</script>

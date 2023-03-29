@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <title>2 Level List</title>
+</head>
+<body>
+     <div id="container">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+
+     </div>
+
+     <script>
+        let ul = `<ul>`
+            for( let i=1 ; i<=3 ; i++){
+                let sub_ul = ''
+
+                if (i==1){
+                sub_ul = `<ul>`
+                    for( let j=1; j<=2; j++){
+                        sub_ul +=`<li>Subitem ${j}</li>`
+                    }
+                    sub_ul += `</ul>`
+                }
+               
+               if (i==2){
+                sub_ul = `<ul>`
+                    for( let s=3; s<=5; s++){
+                        sub_ul +=`<li>Subitem ${s}</li>`
+                    }
+                    sub_ul += `</ul>`
+                }
+                if (i==3){
+                sub_ul = `<ul>`
+                    for( let h=6; h<=7; h++){
+                        sub_ul +=`<li>Subitem ${h}</li>`
+                    }
+                    sub_ul += `</ul>`
+                }
+               ul += `<li>Item ${i}${sub_ul}</li>`
+              }
+
+
+            ul += `</ul>`
+
+            container.innerHTML = ul
+
+     </script>
+    
+</body>
+</html>
